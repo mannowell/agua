@@ -10,14 +10,16 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Inter', sans-serif; overflow-x:hidden; }
+
 html, body { height: 100%; }
 
-/* SLIDER */
 .slider { position:relative; width:100%; height:100vh; overflow:hidden; }
+
 .slide {
   position:absolute;
   top:0; left:0;
-  width:100%; height:100%;
+  width:100%;
+  height:100%;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -26,15 +28,17 @@ html, body { height: 100%; }
   transition: opacity 0.8s ease;
   padding:20px;
 }
+
 .slide.active { opacity:1; z-index:1; }
 
-/* HERO */
 .hero {
-  background: linear-gradient(rgba(1,87,155,0.85), rgba(2,119,189,0.85)),
-              url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(1,87,155,0.85), rgba(2,119,189,0.85)), 
+              url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=80') 
+              center/cover no-repeat;
   color:white;
   text-align:center;
 }
+
 .hero h2 { font-family: 'Quicksand', sans-serif; font-size:2.5rem; font-weight:700; margin-bottom:20px; }
 .hero p { font-size:1.2rem; margin-bottom:30px; }
 .hero .btn-primary {
@@ -44,7 +48,6 @@ html, body { height: 100%; }
 }
 .hero .btn-primary:hover { background:#1da854; }
 
-/* PRODUTOS */
 .product-slide {
   display:flex;
   justify-content:center;
@@ -53,104 +56,97 @@ html, body { height: 100%; }
   background:white;
 }
 
-/* CONTAINER PRODUTO + MARCAS */
-.marcas-e-produto {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:60px;
-  width:100%;
-  padding:20px;
-  flex-wrap:wrap;
+/* REMOVIDO QUALQUER SOMBRA AQUI */
+.product-card img {
+  width:260px;
+  height:auto;
+  margin-bottom:20px;
+  filter:none !important;
+}
+.product-card h3 { 
+  font-size:2rem; 
+  color:#01579b; 
+  margin-bottom:15px; 
+}
+.product-card p { 
+  font-size:1.05rem; 
+  color:#0277bd; 
+  margin:5px 0; 
 }
 
-/* LOGOS DAS MARCAS – sombra somente para baixo */
+/* Container das marcas + garrafão */
+.marcas-e-produto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* LOGOS — sem sombra */
 .marca-esquerda,
 .marca-direita {
-  width:140px;
-  height:auto;
-  object-fit:contain;
-  filter: drop-shadow(0 6px 6px rgba(0,0,0,0.25)); /* SOMBRA INFERIOR */
-  transition:.3s;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter:none !important;
+  transition: .3s;
 }
+
 .marca-esquerda:hover,
-.marca-direita:hover { transform:scale(1.08); }
+.marca-direita:hover {
+  transform: scale(1.08);
+}
 
-/* GARRAFÃO CENTRAL – sombra somente inferior */
+/* GARRAFÃO — sem sombra */
 .galao-centro {
-  width:220px;
-  height:auto;
-  object-fit:contain;
-  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.25)); /* SOMBRA INFERIOR */
-  margin-bottom:10px;
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  filter:none !important;
+  margin-bottom: 10px;
 }
 
-/* TEXTOS DO CARD */
+/* Títulos */
 .product-card h3 {
-  margin-top:10px;
-  font-size:1.6rem;
-  font-weight:bold;
-  text-align:center;
-}
-.product-card p {
-  text-align:center;
-  font-size:1rem;
-}
-
-/* COBERTURA */
-.coverage-slide {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:#f0f9ff;
-}
-.map-container {
-  width:80%;
-  height:60%;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  margin-bottom:15px;
-}
-
-/* COMO PEDIR */
-.how-to-order, .contact-slide {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:white;
-}
-.step-card {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:#fff3e0;
-  padding:25px;
-  border-radius:16px;
-  margin:10px;
-  min-width:220px;
-}
-.step-card h3 { color:#e65100; margin:10px 0; }
-
-/* CONTATO */
-.contact-slide h2 {
-  font-size:2rem;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
   color:#01579b;
-  margin-bottom:20px;
 }
-.contact-slide p { font-size:1.1rem; margin-bottom:20px; }
-.contact-slide .btn-whatsapp {
-  background:#25D366; color:white;
-  padding:18px 40px; border-radius:50px;
-  font-weight:700; text-decoration:none; transition:0.3s;
-}
-.contact-slide .btn-whatsapp:hover { background:#1da854; }
 
-/* SETAS DE NAVEGAÇÃO */
+.product-card p {
+  text-align: center;
+  font-size: 1.1rem;
+  color:#0277bd;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .marcas-e-produto {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .marca-esquerda,
+  .marca-direita {
+    width: 130px;
+  }
+
+  .galao-centro {
+    width: 200px;
+  }
+}
+
+@media(max-width:768px){
+  .hero h2 { font-size:1.8rem; }
+  .hero p { font-size:1rem; }
+}
+
+/* Outros elementos (setas, botão WhatsApp, etc.) */
 .nav-arrow {
   position:fixed;
   top:50%;
@@ -168,47 +164,27 @@ html, body { height: 100%; }
   box-shadow:0 4px 15px rgba(0,0,0,0.2);
   z-index:999;
 }
+
 .nav-arrow:hover { background:#f0f0f0; }
 #prev { left:10px; }
 #next { right:10px; }
 
-/* BOTÃO WHATSAPP FLUTUANTE */
 .whatsapp-float {
-  position: fixed;
-  bottom: 25px; right: 25px;
-  background: #25D366;
-  color: white;
-  width:65px; height:65px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position: fixed; bottom: 25px; right: 25px;
+  background: #25D366; color: white;
+  width:65px; height:65px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
   font-size:2rem;
   box-shadow:0 6px 20px rgba(37,211,102,0.5);
-  text-decoration:none;
-  z-index:1000;
-}
-.whatsapp-float:hover {
-  background:#1da854;
-  transform:scale(1.1);
-  box-shadow:0 8px 25px rgba(37,211,102,0.7);
+  text-decoration:none; z-index:1000;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 900px) {
-  .marcas-e-produto {
-    flex-direction:column;
-    gap:30px;
-  }
-  .marca-esquerda,
-  .marca-direita { width:120px; }
-  .galao-centro { width:180px; }
-}
-@media(max-width:768px){
-  .hero h2 { font-size:1.8rem; }
-  .hero p { font-size:1rem; }
+.whatsapp-float:hover { 
+  background:#1da854; 
+  transform:scale(1.1);
 }
 </style>
+
 </head>
 <body>
 
@@ -314,6 +290,7 @@ document.getElementById('prev').addEventListener('click', ()=>{
 
 </body>
 </html>
+
 
 
 
