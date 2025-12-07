@@ -129,6 +129,71 @@ html, body { height: 100%; }
 }
 .whatsapp-float:hover { background:#1da854; transform:scale(1.1); box-shadow:0 8px 25px rgba(37,211,102,0.7); }
 
+  /* Container geral */
+.marcas-e-produto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Imagens das marcas */
+.marca-esquerda,
+.marca-direita {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.25));
+  transition: .3s;
+}
+
+.marca-esquerda:hover,
+.marca-direita:hover {
+  transform: scale(1.08);
+}
+
+/* Garrafão central */
+.galao-centro {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-card p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .marcas-e-produto {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .marca-esquerda,
+  .marca-direita {
+    width: 120px;
+  }
+
+  .galao-centro {
+    width: 180px;
+  }
+}
+
+
 @media(max-width:768px){ .hero h2 { font-size:1.8rem; } .hero p { font-size:1rem; } }
 </style>
 </head>
@@ -146,28 +211,37 @@ html, body { height: 100%; }
     <a href="https://wa.me/5598991136533" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Faça Seu Pedido</a>
   </section>
 
-  <!-- PRODUTO 20L -->
-  <section class="slide product-slide">
+ <!-- PRODUTO 20L -->
+<section class="slide product-slide">
+
+  <div class="marcas-e-produto">
+    
+    <!-- Marca à esquerda -->
+    <img class="marca-esquerda"
+      src="https://www.sindibebidasma.com.br/wp-content/uploads/2018/11/COCAIS.png"
+      alt="Água Cocais">
+
+    <!-- Galão central -->
     <div class="product-card">
-      <img src="https://static.wixstatic.com/media/dc586a_1b5e4d0e90204ea89f9a00965dc03d28~mv2.jpg/v1/fill/w_520,h_650,al_c,lg_1,q_80,enc_avif,quality_auto/dc586a_1b5e4d0e90204ea89f9a00965dc03d28~mv2.jpg" alt="Garrafão 20L">
+      <img class="galao-centro"
+        src="https://static.wixstatic.com/media/dc586a_1b5e4d0e90204ea89f9a00965dc03d28~mv2.jpg/v1/fill/w_520,h_650,al_c,lg_1,q_80,enc_avif,quality_auto/dc586a_1b5e4d0e90204ea89f9a00965dc03d28~mv2.jpg"
+        alt="Garrafão 20L">
+
       <h3>Garrafão 20L</h3>
       <p><i class="fas fa-check-circle"></i> Perfeito para famílias</p>
       <p><i class="fas fa-check-circle"></i> Mais econômico</p>
       <p><i class="fas fa-check-circle"></i> Alta capacidade</p>
     </div>
-    <div class="marcas-container">
-  <h3>Marcas disponíveis:</h3>
 
-  <div class="marcas-logos">
-      <img src="https://www.sindibebidasma.com.br/wp-content/uploads/2018/11/COCAIS.png" 
-           alt="Água Cocais">
+    <!-- Marca à direita -->
+    <img class="marca-direita"
+      src="https://www.sindibebidasma.com.br/wp-content/uploads/2018/10/LECOESMARANHENSES.png"
+      alt="Água Lençóis Maranhenses">
 
-      <img src="https://www.sindibebidasma.com.br/wp-content/uploads/2018/10/LECOESMARANHENSES.png" 
-           alt="Água Lençóis Maranhenses">
   </div>
-</div>
 
-  </section>
+</section>
+
 
   <!-- COBERTURA -->
   <section class="slide coverage-slide">
@@ -227,6 +301,7 @@ document.getElementById('prev').addEventListener('click', ()=>{
 
 </body>
 </html>
+
 
 
 
