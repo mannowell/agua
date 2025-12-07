@@ -12,7 +12,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Inter', sans-serif; overflow-x:hidden; }
 
-html, body { height: 100%; }
+html, body { height: 100%; line-height:1.55; }
 
 /* ------------------------------
    SLIDER
@@ -55,8 +55,8 @@ html, body { height: 100%; }
   font-family: 'Quicksand', sans-serif; 
   font-size:2.5rem; 
   font-weight:700; 
-  margin-bottom:20px; 
   margin-top:35px;
+  margin-bottom:22px; 
 }
 
 .hero p { font-size:1.2rem; margin-bottom:30px; }
@@ -78,57 +78,60 @@ html, body { height: 100%; }
   align-items:center;
   flex-direction:column;
   background:white;
+  padding-top:45px; /* título mais acima */
 }
 
+/* TÍTULO GARRAFÃO 20L (MAIÚSCULO E ACIMA DO GARRAFÃO) */
+.titulo-garrafa {
+  font-size:2rem;
+  font-weight:800;
+  color:#01579b;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align:center;
+}
 
+/* Container (logos + garrafão) */
 .marcas-e-produto {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 45px;
   width: 100%;
-  padding: 20px 0;
-  margin-top: 10px;
+  padding: 10px 0;
+  margin-top: 5px;
   flex-wrap: nowrap;
 }
 
-/* LOGOS */
+/* LOGOS sem sombras */
 .marca-esquerda,
 .marca-direita {
   width: 150px;
   height: auto;
   object-fit: contain;
-  transform: translateY(-20px);
-  filter:none !important;
+  transform: translateY(-10px);
   transition: .3s;
 }
 
 .marca-esquerda:hover,
 .marca-direita:hover {
-transform: translateY(-20px) scale(1.08);
+  transform: translateY(-10px) scale(1.08);
 }
 
-/* GARRAFÃO */
+/* GARRAFÃO — LIMPO, SEM SOMBRA */
 .galao-centro {
   width: 260px;
   height: auto;
   object-fit: contain;
-  filter:none !important;
   margin-bottom: 10px;
 }
 
-/* Títulos */
-.product-card h3 { 
-  font-size:2rem; 
-  color:#01579b; 
-  margin-bottom:15px; 
-}
-
-.product-card p { 
-  font-size:1.05rem; 
-  color:#0277bd; 
-  margin:5px 0; 
+/* 2 TEXTOS ABAIXO DO GARRAFÃO */
+.product-info-text {
   text-align:center;
+  font-size:1.15rem;
+  color:#0277bd;
+  margin:3px 0;
 }
 
 /* ------------------------------
@@ -141,15 +144,9 @@ transform: translateY(-20px) scale(1.08);
     gap: 15px;
   }
 
-  .marca-esquerda,
-  .marca-direita {
-    width: 115px;
-    transform: translateY(-10px);
-  }
+  .marca-esquerda, .marca-direita { width: 120px; }
 
-  .galao-centro {
-    width: 200px;
-  }
+  .galao-centro { width: 200px; }
 }
 
 @media(max-width:768px){
@@ -161,14 +158,8 @@ transform: translateY(-20px) scale(1.08);
     gap: 10px;
   }
 
-  .marca-esquerda,
-  .marca-direita {
-    width: 95px;
-  }
-
-  .galao-centro {
-    width: 180px;
-  }
+  .marca-esquerda, .marca-direita { width: 95px; }
+  .galao-centro { width: 180px; }
 }
 
 /* ------------------------------
@@ -192,7 +183,7 @@ transform: translateY(-20px) scale(1.08);
 }
 
 /* ------------------------------
-   COMO PEDIR
+   COMO FAZER O PEDIDO
 --------------------------------*/
 .how-to-order, .contact-slide {
   display:flex;
@@ -201,7 +192,7 @@ transform: translateY(-20px) scale(1.08);
   align-items:center;
   text-align:center;
   background:white;
-  padding-top:40px; 
+  padding-top:50px;
 }
 
 .step-card {
@@ -210,15 +201,16 @@ transform: translateY(-20px) scale(1.08);
   justify-content:center;
   align-items:center;
   background:#fff3e0;
-  padding:25px;
+  padding:30px;
   border-radius:16px;
   margin:10px;
   min-width:220px;
+  line-height:1.55;
 }
 
 .step-card h3 { 
   color:#e65100; 
-  margin:10px 0; 
+  margin:15px 0; 
 }
 
 /* ------------------------------
@@ -227,11 +219,12 @@ transform: translateY(-20px) scale(1.08);
 .contact-slide h2 { 
   font-size:2rem; 
   color:#01579b; 
-  margin-bottom:20px; 
+  margin-bottom:22px; 
 }
 .contact-slide p { 
   font-size:1.1rem; 
-  margin-bottom:20px; 
+  margin-bottom:22px; 
+  line-height:1.55;
 }
 
 .contact-slide .btn-whatsapp {
@@ -246,7 +239,7 @@ transform: translateY(-20px) scale(1.08);
 .contact-slide .btn-whatsapp:hover { background:#1da854; }
 
 /* ------------------------------
-   NAV SETAS — agora discretas
+   SETAS SUPER TRANSPARENTES
 --------------------------------*/
 .nav-arrow {
   position:fixed;
@@ -254,7 +247,7 @@ transform: translateY(-20px) scale(1.08);
   transform:translateY(-50%);
   font-size:2.3rem;
   color:white;
-  background:rgba(0,0,0,0.15);
+  background:rgba(0,0,0,0.08); /* MAIS TRANSPARENTE */
   border-radius:50%;
   width:55px;
   height:55px;
@@ -266,7 +259,7 @@ transform: translateY(-20px) scale(1.08);
   z-index:999;
 }
 
-.nav-arrow:hover { background:rgba(0,0,0,0.30); }
+.nav-arrow:hover { background:rgba(0,0,0,0.18); }
 
 #prev { left:10px; }
 #next { right:10px; }
@@ -288,8 +281,8 @@ transform: translateY(-20px) scale(1.08);
   background:#1da854; 
   transform:scale(1.1);
 }
-
 </style>
+
 
 
 </head>
@@ -398,6 +391,7 @@ document.getElementById('prev').addEventListener('click', ()=>{
 
 </body>
 </html>
+
 
 
 
