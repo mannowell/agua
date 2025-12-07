@@ -14,7 +14,15 @@ body { font-family: 'Inter', sans-serif; overflow-x:hidden; }
 
 html, body { height: 100%; }
 
-.slider { position:relative; width:100%; height:100vh; overflow:hidden; }
+/* ------------------------------
+   SLIDER
+--------------------------------*/
+.slider { 
+  position:relative; 
+  width:100%; 
+  height:100vh; 
+  overflow:hidden; 
+}
 
 .slide {
   position:absolute;
@@ -32,6 +40,9 @@ html, body { height: 100%; }
 
 .slide.active { opacity:1; z-index:1; }
 
+/* ------------------------------
+   HERO
+--------------------------------*/
 .hero {
   background: linear-gradient(rgba(1,87,155,0.85), rgba(2,119,189,0.85)), 
               url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=80') 
@@ -40,14 +51,26 @@ html, body { height: 100%; }
   text-align:center;
 }
 
-.hero h2 { font-family: 'Quicksand', sans-serif; font-size:2.5rem; font-weight:700; margin-bottom:20px; }
+.hero h2 { 
+  font-family: 'Quicksand', sans-serif; 
+  font-size:2.5rem; 
+  font-weight:700; 
+  margin-bottom:20px; 
+  margin-top:35px;
+}
+
 .hero p { font-size:1.2rem; margin-bottom:30px; }
+
 .hero .btn-primary {
   background:#25D366; color:white; padding:18px 40px; border-radius:50px;
   font-weight:700; text-decoration:none; font-size:1.1rem;
   display:inline-block; transition:0.3s;
 }
 .hero .btn-primary:hover { background:#1da854; }
+
+/* ------------------------------
+   PRODUTO + MARCAS
+--------------------------------*/
 
 .product-slide {
   display:flex;
@@ -57,84 +80,71 @@ html, body { height: 100%; }
   background:white;
 }
 
-
-.product-card img {
-  width:260px;
-  height:auto;
-  margin-bottom:20px;
-  filter:none !important;
-}
-.product-card h3 { 
-  font-size:2rem; 
-  color:#01579b; 
-  margin-bottom:15px; 
-}
-.product-card p { 
-  font-size:1.05rem; 
-  color:#0277bd; 
-  margin:5px 0; 
-}
-
-/* Container das marcas + garrafão */
+/* NOVO — contêiner unificado com efeito ousado */
 .marcas-e-produto {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 45px;
   width: 100%;
-  padding: 20px;
-  flex-wrap: wrap;
+  padding: 20px 0;
+  margin-top: 10px;
+  flex-wrap: nowrap;
 }
 
-/* LOGOS  */
+/* LOGOS — com sombra e efeito aproximado do garrafão */
 .marca-esquerda,
 .marca-direita {
   width: 150px;
   height: auto;
   object-fit: contain;
-  filter:none !important;
+  transform: translateY(-20px);
+  filter: drop-shadow(0px 4px 16px rgba(0,0,0,0.22));
   transition: .3s;
 }
 
 .marca-esquerda:hover,
 .marca-direita:hover {
-  transform: scale(1.08);
+  transform: translateY(-20px) scale(1.08);
 }
 
-/* GARRAFÃO  */
+/* GARRAFÃO — leve sombra */
 .galao-centro {
   width: 260px;
   height: auto;
   object-fit: contain;
-  filter:none !important;
+  filter: drop-shadow(0px 5px 18px rgba(0,0,0,0.25));
   margin-bottom: 10px;
 }
 
 /* Títulos */
-.product-card h3 {
-  margin-top: 10px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  color:#01579b;
+.product-card h3 { 
+  font-size:2rem; 
+  color:#01579b; 
+  margin-bottom:15px; 
 }
 
-.product-card p {
-  text-align: center;
-  font-size: 1.1rem;
-  color:#0277bd;
+.product-card p { 
+  font-size:1.05rem; 
+  color:#0277bd; 
+  margin:5px 0; 
+  text-align:center;
 }
 
-/* Responsividade */
+/* ------------------------------
+   RESPONSIVIDADE
+--------------------------------*/
 @media (max-width: 900px) {
+
   .marcas-e-produto {
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    gap: 15px;
   }
 
   .marca-esquerda,
   .marca-direita {
-    width: 130px;
+    width: 115px;
+    transform: translateY(-10px);
   }
 
   .galao-centro {
@@ -143,9 +153,27 @@ html, body { height: 100%; }
 }
 
 @media(max-width:768px){
-  .hero h2 { font-size:1.8rem; }
+  .hero h2 { font-size:1.8rem; margin-top:20px; }
   .hero p { font-size:1rem; }
+
+  .marcas-e-produto {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .marca-esquerda,
+  .marca-direita {
+    width: 95px;
+  }
+
+  .galao-centro {
+    width: 180px;
+  }
 }
+
+/* ------------------------------
+   COBERTURA
+--------------------------------*/
 .coverage-slide {
   display:flex;
   flex-direction:column;
@@ -154,8 +182,18 @@ html, body { height: 100%; }
   background:#f0f9ff;
 }
 
-.map-container { width:80%; height:60%; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1); margin-bottom:15px; }
+.map-container { 
+  width:80%; 
+  height:60%; 
+  border-radius:16px; 
+  overflow:hidden; 
+  box-shadow:0 4px 20px rgba(0,0,0,0.1); 
+  margin-bottom:15px; 
+}
 
+/* ------------------------------
+   COMO PEDIR
+--------------------------------*/
 .how-to-order, .contact-slide {
   display:flex;
   flex-direction:column;
@@ -163,6 +201,7 @@ html, body { height: 100%; }
   align-items:center;
   text-align:center;
   background:white;
+  padding-top:40px;   /* espaçamento extra */
 }
 
 .step-card {
@@ -176,38 +215,65 @@ html, body { height: 100%; }
   margin:10px;
   min-width:220px;
 }
-.step-card h3 { color:#e65100; margin:10px 0; }
 
-.contact-slide h2 { font-size:2rem; color:#01579b; margin-bottom:20px; }
-.contact-slide p { font-size:1.1rem; margin-bottom:20px; }
+.step-card h3 { 
+  color:#e65100; 
+  margin:10px 0; 
+}
+
+/* ------------------------------
+   CONTATO
+--------------------------------*/
+.contact-slide h2 { 
+  font-size:2rem; 
+  color:#01579b; 
+  margin-bottom:20px; 
+}
+.contact-slide p { 
+  font-size:1.1rem; 
+  margin-bottom:20px; 
+}
+
 .contact-slide .btn-whatsapp {
-  background:#25D366; color:white; padding:18px 40px; border-radius:50px; font-weight:700; text-decoration:none; transition:0.3s;
+  background:#25D366; 
+  color:white; 
+  padding:18px 40px; 
+  border-radius:50px; 
+  font-weight:700; 
+  text-decoration:none; 
+  transition:0.3s;
 }
 .contact-slide .btn-whatsapp:hover { background:#1da854; }
-  
-/* Outros elementos (setas, botão WhatsApp, etc.) */
+
+/* ------------------------------
+   NAV SETAS — agora discretas
+--------------------------------*/
 .nav-arrow {
   position:fixed;
   top:50%;
   transform:translateY(-50%);
-  font-size:2.5rem;
-  color:#01579b;
-  background:white;
+  font-size:2.3rem;
+  color:white;
+  background:rgba(0,0,0,0.15);
   border-radius:50%;
-  width:60px;
-  height:60px;
+  width:55px;
+  height:55px;
   display:flex;
   justify-content:center;
   align-items:center;
   cursor:pointer;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  transition:.3s;
   z-index:999;
 }
 
-.nav-arrow:hover { background:#f0f0f0; }
+.nav-arrow:hover { background:rgba(0,0,0,0.30); }
+
 #prev { left:10px; }
 #next { right:10px; }
 
+/* ------------------------------
+   WHATSAPP FLOAT
+--------------------------------*/
 .whatsapp-float {
   position: fixed; bottom: 25px; right: 25px;
   background: #25D366; color: white;
@@ -222,7 +288,9 @@ html, body { height: 100%; }
   background:#1da854; 
   transform:scale(1.1);
 }
+
 </style>
+
 
 </head>
 <body>
@@ -329,6 +397,7 @@ document.getElementById('prev').addEventListener('click', ()=>{
 
 </body>
 </html>
+
 
 
 
