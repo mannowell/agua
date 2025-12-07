@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/dc586a_1b5e4d0e90204ea89f9a00965dc03d28~mv2.jpg" />
+
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Inter', sans-serif; overflow-x:hidden; }
@@ -56,7 +57,7 @@ html, body { height: 100%; }
   background:white;
 }
 
-/* REMOVIDO QUALQUER SOMBRA AQUI */
+
 .product-card img {
   width:260px;
   height:auto;
@@ -85,7 +86,7 @@ html, body { height: 100%; }
   flex-wrap: wrap;
 }
 
-/* LOGOS — sem sombra */
+/* LOGOS  */
 .marca-esquerda,
 .marca-direita {
   width: 150px;
@@ -100,7 +101,7 @@ html, body { height: 100%; }
   transform: scale(1.08);
 }
 
-/* GARRAFÃO — sem sombra */
+/* GARRAFÃO  */
 .galao-centro {
   width: 260px;
   height: auto;
@@ -145,7 +146,45 @@ html, body { height: 100%; }
   .hero h2 { font-size:1.8rem; }
   .hero p { font-size:1rem; }
 }
+.coverage-slide {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#f0f9ff;
+}
 
+.map-container { width:80%; height:60%; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1); margin-bottom:15px; }
+
+.how-to-order, .contact-slide {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:white;
+}
+
+.step-card {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#fff3e0;
+  padding:25px;
+  border-radius:16px;
+  margin:10px;
+  min-width:220px;
+}
+.step-card h3 { color:#e65100; margin:10px 0; }
+
+.contact-slide h2 { font-size:2rem; color:#01579b; margin-bottom:20px; }
+.contact-slide p { font-size:1.1rem; margin-bottom:20px; }
+.contact-slide .btn-whatsapp {
+  background:#25D366; color:white; padding:18px 40px; border-radius:50px; font-weight:700; text-decoration:none; transition:0.3s;
+}
+.contact-slide .btn-whatsapp:hover { background:#1da854; }
+  
 /* Outros elementos (setas, botão WhatsApp, etc.) */
 .nav-arrow {
   position:fixed;
@@ -290,6 +329,7 @@ document.getElementById('prev').addEventListener('click', ()=>{
 
 </body>
 </html>
+
 
 
 
